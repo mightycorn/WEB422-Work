@@ -40,9 +40,13 @@ app.post("/api/names", async (req, res) => {
 
 // async-await version
 
+// app.get("/api/names", async (req, res) => {
+//     const data = await namesService.getAllNames()
+//     res.json(data);
+// });
+
 app.get("/api/names", async (req, res) => {
-    const data = await namesService.getAllNames()
-    res.json(data);
+    res.json({message: "hello"});
 });
 
 // non-async-await version
