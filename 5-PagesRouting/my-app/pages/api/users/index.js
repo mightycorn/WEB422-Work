@@ -1,19 +1,18 @@
 export default function handler(req, res) {
+    const { name } = req.body;
     const { method } = req;
   
     switch (method) {
       case 'GET':
-        res.status(200).json({ name: 'John Doe' });
+        // Read data from your database
+        res.status(200).json({ message: `TODO: Get All Users` });
         break;
       case 'POST':
-        // return the 'name' value provided in the body of the rquest
-        res.status(200).json({ name: req.body.name });
+        // Create data in your database
+        res.status(200).json({ message: `TODO: Create User with Name: ${name}` });
         break;
       default:
-        // send an error message back, indicating that the method is not supported by this route
         res.setHeader('Allow', ['GET', 'POST']);
         res.status(405).end(`Method ${method} Not Allowed`);
     }
-    res.status(200).json({ name: 'John Doe' })
-  }
-  
+}
