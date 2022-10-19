@@ -24,3 +24,14 @@ a {
     background: black;
   }
 }
+
+.inputError{
+  background-color: rgb(251, 221, 225);
+}
+
+.inputErrorText{
+  color: rgb(167, 3, 3);
+  font-size: smaller;
+  font-weight: bold;
+}
+
