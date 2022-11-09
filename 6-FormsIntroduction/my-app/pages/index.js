@@ -7,8 +7,10 @@ import FormWithValidation from '../components/FormWithValidation'
 
 export default function Home() {
   return (
-    // <SimpleForm />
-    // <UserForm />
-    <FormWithValidation />
+    <>
+      <SimpleForm />
+      <UserForm />
+      <FormWithValidation />
+    </>
   )
 }

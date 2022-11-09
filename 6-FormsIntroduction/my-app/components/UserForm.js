@@ -29,6 +29,8 @@ export default function UserForm() {
     for (const prop in data) {
       setValue(prop, data[prop]);
     }
+
+    console.log("here I am")
   }, []);
 
   function submitForm(data) {
