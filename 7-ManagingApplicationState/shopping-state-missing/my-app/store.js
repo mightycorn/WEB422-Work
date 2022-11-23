@@ -21,3 +21,4 @@ async function defaultValues() {
 }
 
 export const cartListAtom = atom(defaultValues());
+export const packingAtom = atom([]);
