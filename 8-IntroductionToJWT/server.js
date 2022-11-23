@@ -1,11 +1,14 @@
 const express = require("express");
-const cors = require("cors");
-const dataService = require("./data-service.js");
-const userService = require("./user-service.js");
 const app = express();
+const cors = require("cors");
+require('dotenv').config();
+
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const passportJWT = require('passport-jwt');
+
+const dataService = require("./data-service.js");
+const userService = require("./user-service.js");
 
 // JSON Web Token Setup
 let ExtractJwt = passportJWT.ExtractJwt;
@@ -21,7 +24,7 @@ jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
 // using the following online tool:
 // https://lastpass.com/generatepassword.php
 
-jwtOptions.secretOrKey = '&0y7$noP#5rt99&GB%Pz7j2b1vkzaB0RKs%^N^0zOP89NT04mPuaM!&G8cbNZOtH';
+jwtOptions.secretOrKey = process.env.JWT_SECRET;
 
 let strategy = new JwtStrategy(jwtOptions, function (jwt_payload, next) {
   console.log('payload received', jwt_payload);

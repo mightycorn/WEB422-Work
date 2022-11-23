@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-let mongoDBConnectionString =
-  "mongodb+srv://dbUser:Tu2d8Se7dpjAzmJr@senecaweb.rbmzebq.mongodb.net/simple-API-users?retryWrites=true&w=majority";
+let mongoDBConnectionString = process.env.MONGO_DB_CONN_STRING;
 
 let Schema = mongoose.Schema;
 
